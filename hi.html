@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GOOD MORNING</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#f5eee8,#e8d9cc);
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* INTRO SECTION */
+
+#intro{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.introText{
+    font-size:28px;
+    color:#6f4a30;
+    margin-bottom:25px;
+}
+
+/* BUTTON STYLE */
+
+button{
+    padding:16px 40px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:#8b5e3c;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#6f4a30;
+}
+
+/* FLOATING PETALS */
+
+.petal{
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:#c9a27a;
+    border-radius:50%;
+    opacity:0.6;
+    animation:float 10s infinite;
+}
+
+@keyframes float{
+    0%{ transform:translateY(-100px) rotate(0deg); }
+    100%{ transform:translateY(100vh) rotate(360deg); }
+}
+
+/* CONTENT AFTER CLICK */
+
+#content{
+    display:none;
+    margin-top:40px;
+}
+
+.flower{
+    width:320px;
+    margin-bottom:20px;
+    opacity:0;
+    transform:scale(0.6);
+    transition:all 1.2s ease;
+}
+
+.show{
+    opacity:1;
+    transform:scale(1);
+}
+
+.letter{
+    background:#fffaf5;
+    width:360px;
+    margin:auto;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0px 8px 20px rgba(0,0,0,0.15);
+    color:#5a3e2b;
+    text-align:left;
+    line-height:1.6;
+}
+
+h2{
+    color:#8b5e3c;
+    text-align:center;
+}
+
+p{
+    font-size:16px;
+    white-space:pre-line; /* preserves line breaks */
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+    <div class="introText">
+        Hi LOVEEE KOOOOOOOO ❤️<br>
+        I have something for you
+    </div>
+    <button onclick="openLetter()">Open</button>
+</div>
+
+<!-- petals -->
+<div class="petal" style="left:10%; animation-delay:0s;"></div>
+<div class="petal" style="left:30%; animation-delay:2s;"></div>
+<div class="petal" style="left:50%; animation-delay:4s;"></div>
+<div class="petal" style="left:70%; animation-delay:1s;"></div>
+<div class="petal" style="left:90%; animation-delay:3s;"></div>
+
+<div id="content">
+
+<img id="flower" class="flower"
+src="https://rosaholics.com/cdn/shop/products/CampanitaMano.jpg?v=1704774489">
+
+<div class="letter">
+<h2>FLOWERS FOR YOU</h2>
+<p>
+GOOD MORNING HIHI!
+
+WAG KA KUKULIT NGAYON HA!!!  
+
+KAIN IKAW NG HEAVY MEAL  
+INOM NG WATER  
+LIGO NA ULIT  
+
+I LOVEEE YOUUUUUUUUUUUUUUUU ❤️
+</p>
+</div>
+
+</div>
+
+<script>
+
+function openLetter(){
+    document.getElementById("intro").style.display="none";
+    document.getElementById("content").style.display="block";
+
+    setTimeout(()=>{
+        document.getElementById("flower").classList.add("show");
+    },200);
+}
+
+</script>
+
+</body>
+</html>
